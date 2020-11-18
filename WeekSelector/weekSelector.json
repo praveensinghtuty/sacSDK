@@ -1,0 +1,159 @@
+{
+  "id": "com.visualbi.weekselector",
+  "version": "1.0.0",
+  "name": "Week Selector",
+  "description": "Lets you select Week",
+  "newInstancePrefix": "Week_Selector",
+  "icon": "https://www.sample.com/customwidgets/coloredbox/icon.png",
+  "vendor": "VisualBI",
+  "eula": "",
+  "license": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-visualbi-weekselector",
+      "url": "https://codepen.io/praveensinghtuty1990/pen/NWqXWXO.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "styling",
+      "tag": "com-visualbi-weekselector-sps",
+      "url": "https://codepen.io/praveensinghtuty1990/pen/oNXEJVE.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "builder",
+      "tag": "com-visualbi-weekselector-bps",
+      "url": "https://codepen.io/praveensinghtuty1990/pen/RwPQEze.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+  "yearcolor": {
+      "type": "string",
+      "description": "Default color",
+      "default": "#808080"
+    },
+	"bordercolor": {
+      "type": "string",
+      "description": "Default color",
+      "default": "#000000"
+    },
+    "color": {
+      "type": "string",
+      "description": "Default color",
+      "default": "#808080"
+    },
+	"fontcolor": {
+      "type": "string",
+      "description": "Default Font color",
+      "default": "#000000"
+    },
+	"startdate": {
+      "type": "string",
+      "description": "gets start date of week",
+      "default": ""
+    },
+	
+	"enddate": {
+      "type": "string",
+      "description": "gets end date of week",
+      "default": ""
+    },
+	"datefontsize": {
+      "type": "integer",
+      "default": 20
+    },
+	"borderthickness": {
+      "type": "integer",
+      "default": 4
+    },
+"startyear": {
+      "type": "string",
+      "description": "Start Year",
+      "default": "2017"
+    },	
+	"selectedcolor": {
+      "type": "string",
+      "description": "Selected color",
+      "default": "#483D8B"
+    },
+    "selectedweek": {
+      "type": "string",
+      "description": "Set the selected week",
+      "default": ""
+    },
+	 "selectedyear": {
+      "type": "string",
+      "description": "Set the selected year",
+      "default": ""
+    },
+    "height": {
+      "type": "integer",
+      "default": 200
+    }
+  },
+  "methods": {
+    "setSelectedWeek": {
+      "description": "Sets the user defined week.",
+      "parameters": [
+        {
+          "name": "newWeek",
+          "type": "string",
+          "description": "The new week"
+        }
+      ],
+      "body": "this.selectedweek = newWeek;"
+    },
+    "getSelectedWeek": {
+      "returnType": "string",
+      "description": "Returns the selected week.",
+      "body": "return this.selectedweek;"
+    },
+	"getStartDate": {
+      "returnType": "string",
+      "description": "Returns the start date.",
+      "body": "return this.startdate;"
+    },
+	"getEndDate": {
+      "returnType": "string",
+      "description": "Returns the end date.",
+      "body": "return this.enddate;"
+    },
+	    "setStartYear": {
+      "description": "Sets the start year",
+      "parameters": [
+        {
+          "name": "newYear",
+          "type": "string",
+          "description": "The new background color"
+        }
+      ],
+      "body": "this.startyear = newYear;"
+    },
+    "getSelectedYear": {
+      "returnType": "string",
+      "description": "Returns the selected year",
+      "body": "return this.selectedyear;"
+    },
+	 "setSelectedYear": {
+      "description": "Sets the background color.",
+      "parameters": [
+        {
+          "name": "newYear",
+          "type": "string",
+          "description": "The new selected year"
+        }
+      ],
+      "body": "this.selectedyear = newYear;"
+    }
+  },
+  "events": {
+    "onSelect": {
+      "description": "Called when the user selects a month."
+    }
+  }
+}
