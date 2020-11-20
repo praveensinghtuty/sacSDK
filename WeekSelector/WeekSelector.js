@@ -26,15 +26,20 @@ this.getDateRangeOfWeek = function(weekNo, y){
     this.datearray = [];
     for(var i=0;i<7;i++)
     {
-      d1.setDate(d1.getDate() + i);
+      
       if(i===0)
       {
         rangeIsFrom = (d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear();
-      }      
-      if(i==6)
+      }
+      else
       {
-        rangeIsTo = (d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear() ;
-      }    
+        d1.setDate(d1.getDate() + 1);
+        if(i==6)
+        {
+          rangeIsTo = (d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear() ;
+        }
+      }      
+         
       this.datearray.push((d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear());
     }
     

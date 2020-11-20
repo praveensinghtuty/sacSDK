@@ -67,7 +67,7 @@
     {
       "type":"string[]",
       "description": "collection of date",
-      "default": ""
+      "default": []
 
     },
 	"datefontsize": {
@@ -135,7 +135,7 @@
         }
       ],
       "description": "Returns the date for the specifiedDate.",
-      "body": "let days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];return this.datearray[days.indexOf(day)];"
+      "body": "var days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];return this.datearray[days.indexOf(day)];"
     },
 	"getEndDate": {
       "returnType": "string",
