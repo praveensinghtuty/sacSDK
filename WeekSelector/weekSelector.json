@@ -12,21 +12,21 @@
     {
       "kind": "main",
       "tag": "com-visualbi-weekselector",
-      "url": "https://codepen.io/praveensinghtuty1990/pen/NWqXWXO.js",
+      "url": "https://cdn.jsdelivr.net/gh/praveensinghtuty/sacSDK/WeekSelector/WeekSelector.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
       "tag": "com-visualbi-weekselector-sps",
-      "url": "https://codepen.io/praveensinghtuty1990/pen/oNXEJVE.js",
+      "url": "https://cdn.jsdelivr.net/gh/praveensinghtuty/sacSDK/WeekSelector/WeekSelectorSPS.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "builder",
       "tag": "com-visualbi-weekselector-bps",
-      "url": "https://codepen.io/praveensinghtuty1990/pen/RwPQEze.js",
+      "url": "https://cdn.jsdelivr.net/gh/praveensinghtuty/sacSDK/WeekSelector/WeekSelectorBPS.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
@@ -62,6 +62,13 @@
       "type": "string",
       "description": "gets end date of week",
       "default": ""
+    },
+    "datearray":
+    {
+      "type":"string[]",
+      "description": "collection of date",
+      "default": ""
+
     },
 	"datefontsize": {
       "type": "integer",
@@ -117,6 +124,18 @@
       "returnType": "string",
       "description": "Returns the start date.",
       "body": "return this.startdate;"
+    },
+    "getDate": {
+      "returnType": "string",
+      "parameters": [
+        {
+          "name": "day",
+          "type": "string",
+          "description": "The day of the week"
+        }
+      ],
+      "description": "Returns the date for the specifiedDate.",
+      "body": "let days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];return this.datearray[days.indexOf(day)];"
     },
 	"getEndDate": {
       "returnType": "string",

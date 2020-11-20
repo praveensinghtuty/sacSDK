@@ -22,9 +22,22 @@ this.getDateRangeOfWeek = function(weekNo, y){
     numOfdaysPastSinceLastMonday = d1.getDay() - 1;
     d1.setDate(d1.getDate() - numOfdaysPastSinceLastMonday);
     d1.setDate(d1.getDate() + (7 * (weekNo - d1.getWeek())));
-    rangeIsFrom = (d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear();
-    d1.setDate(d1.getDate() + 6);
-    rangeIsTo = (d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear() ;
+    
+    this.datearray = [];
+    for(var i=0;i<7;i++)
+    {
+      d1.setDate(d1.getDate() + i);
+      if(i===0)
+      {
+        rangeIsFrom = (d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear();
+      }      
+      if(i==6)
+      {
+        rangeIsTo = (d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear() ;
+      }    
+      this.datearray.push((d1.getMonth() + 1) + "-" + d1.getDate() + "-" + d1.getFullYear());
+    }
+    
     return rangeIsFrom + " to " + rangeIsTo;
 };
 
@@ -63,7 +76,8 @@ this.getDateRangeOfWeek = function(weekNo, y){
 						properties: {
 							selectedyear: e.currentTarget.innerText,
               startdate: startdate,
-              enddate: enddate
+              enddate: enddate,
+              datearray: this.datearray
 						}
 					}
 			}));
@@ -101,7 +115,8 @@ this.getDateRangeOfWeek = function(weekNo, y){
 						properties: {
 							selectedweek: e.currentTarget.id,
               startdate: startdate,
-              enddate: enddate
+              enddate: enddate,
+              datearray: this.datearray
               
 						}
 					}
@@ -193,7 +208,8 @@ this.getDateRangeOfWeek = function(weekNo, y){
 					detail: {
 						properties: {
 							startdate: startdate,
-              enddate: enddate
+              enddate: enddate,
+              datearray: this.datearray
 						}
 					}
 			}));
