@@ -20,6 +20,7 @@ this.getDateRangeOfWeek = function(weekNo, y){
     var d1, numOfdaysPastSinceLastMonday, rangeIsFrom, rangeIsTo;
     d1 = new Date(''+y+'');
     numOfdaysPastSinceLastMonday = d1.getDay() - 1;
+    console.log(d1,numOfdaysPastSinceLastMonday);
     d1.setDate(d1.getDate() - numOfdaysPastSinceLastMonday);
     d1.setDate(d1.getDate() + (7 * (weekNo - d1.getWeek())));
     

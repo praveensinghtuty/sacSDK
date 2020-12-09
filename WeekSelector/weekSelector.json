@@ -12,21 +12,21 @@
     {
       "kind": "main",
       "tag": "com-visualbi-weekselector",
-      "url": "https://cdn.jsdelivr.net/gh/praveensinghtuty/sacSDK/WeekSelector/WeekSelector.js",
+      "url": "https://localhost:8080/src/WeekSelector.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
       "tag": "com-visualbi-weekselector-sps",
-      "url": "https://cdn.jsdelivr.net/gh/praveensinghtuty/sacSDK/WeekSelector/WeekSelectorSPS.js",
+      "url": "https://localhost:8080/src/WeekSelectorSPS.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "builder",
       "tag": "com-visualbi-weekselector-bps",
-      "url": "https://cdn.jsdelivr.net/gh/praveensinghtuty/sacSDK/WeekSelector/WeekSelectorBPS.js",
+      "url": "https://localhost:8080/src/WeekSelectorBPS.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
