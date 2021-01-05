@@ -5,7 +5,7 @@
   "main": "WeekSelector.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "webpack --config webpack.config.js",
+    "prod": "webpack",
     "server":"webpack-dev-server"
   },
   "devDependencies": {

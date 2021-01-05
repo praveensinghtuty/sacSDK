@@ -68,7 +68,7 @@ this.getDateRangeOfWeek = function(weekNo, y){
                 
                  if( Number(this._props["selectedyear"]) === new Date().getFullYear())
           {
-            $(this).find("#"+new Date().getWeek()).css("border",this._props["borderthickness"]+"px solid "+this._props["bordercolor"]);
+            $(this).find("#"+new Date().getWeek()).css("box-shadow","inset 0px 0px 0px "+this._props["borderthickness"]+"px "+this._props["bordercolor"]);
           }
         else
           {
@@ -133,15 +133,15 @@ this.getDateRangeOfWeek = function(weekNo, y){
 			});
               
          tableCell.addEventListener("mouseover", e =>{
-           var  dateRange = this.getDateRangeOfWeek(e.currentTarget.id,this._props["selectedyear"]);
-           $(this).find("#dateRange").html(dateRange);
+           let dateRange = this.getDateRangeOfWeek(e.currentTarget.id,this._props["selectedyear"]).toSplit(" to ");
+           $(this).find("#dateRange").html(dateRange[0]+"(Mon) to "+ dateRange[1]+"(Sun)");
            
          })     
               
         tableCell.addEventListener("mouseout", e =>{
           
-          var  dateRange = this.getDateRangeOfWeek(this._props["selectedweek"],this._props["selectedyear"]);
-           $(this).find("#dateRange").html(dateRange);
+          let dateRange = this.getDateRangeOfWeek(this._props["selectedweek"],this._props["selectedyear"]).toSplit(" to ");
+           $(this).find("#dateRange").html(dateRange[0]+"(Mon) to "+ dateRange[1]+"(Sun)");
            
          })     
               tableRow.appendChild(tableCell);
@@ -150,9 +150,10 @@ this.getDateRangeOfWeek = function(weekNo, y){
         }
      
       $(this).append(table);      
-      var dateRange = document.createElement("div");
+      let dateRange = document.createElement("div");
       dateRange.id = "dateRange";
-      dateRange.innerHTML = this.getDateRangeOfWeek(new Date().getWeek(),new Date().getFullYear());
+      let dateLimit = this.getDateRangeOfWeek(new Date().getWeek(),new Date().getFullYear()).split(" to ");
+      dateRange.innerHTML = dateLimit[0]+"(Mon) to "+ dateLimit[1]+"(Sun)" ;
       dateRange.style = "width:100%;height:30px;text-align: center; font-weight: bold; color: white; background-color: rgb(88, 89, 91); font-size: 25px;"
        $(this).append(dateRange);
 
@@ -168,7 +169,7 @@ this.getDateRangeOfWeek = function(weekNo, y){
       	if ("borderthickness" in changedProperties || "bordercolor" in changedProperties) {
            if( Number(this._props["selectedyear"]) === new Date().getFullYear())
           {
-            $(this).find("#"+new Date().getWeek()).css("border",this._props["borderthickness"]+"px solid "+this._props["bordercolor"]);
+            $(this).find("#"+new Date().getWeek()).css("box-shadow","inset 0px 0px 0px "+this._props["borderthickness"]+"px "+this._props["bordercolor"]);
           }
           
         }
